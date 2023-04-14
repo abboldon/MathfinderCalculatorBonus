@@ -1,0 +1,380 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.bonus-action-buttons {
+  padding-bottom: 20px;
+}
+
+.bonus-headers-align .mat-mdc-form-field+.mat-mdc-form-field {
+  margin-left: 8px;
+}
+
+mat-grid-tile {
+  background: rgb(235, 242, 245);
+  padding: 1%;
+  height: fit-content;
+}
+
+mat-grid-list {
+  margin: 1%;
+  padding:1%;
+  height: fit-content;
+}
+
+mat-card {
+  margin: 0.5%;
+  display: inline-block;
+  color: #553a6e;
+}
+mat-card-contend {
+  height: 80%;
+}
+
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.formRow {
+  display: -ms-flex;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.check-columna {
+  width: 13px;
+  height: 13px;
+  padding: 0;
+  margin: 0;
+  vertical-align: bottom;
+  position: relative;
+  top: -1px;
+  *overflow: hidden;
+}
+
+.label-columna {
+  display: block;
+  padding-left: 15px;
+  text-indent: -15px;
+}
+
+.mat-expansion-panel,
+.mat-tab-body-content,
+.mat-tab-body {
+  overflow: hidden !important;
+}
+
+.cell-resumen {
+  justify-content: flex-end;
+}
+
+
+.formRow>div {
+  flex: 1 1 250px;
+  padding: 5px 5px 5px 5px;
+}
+
+.campoPequeno {
+  max-width: 100px;
+  flex: 1;
+}
+
+.campoMediano {
+  max-width: 200px;
+}
+
+.campoGrande {
+  max-width: 300px;
+}
+
+.btnControl {
+  margin: auto 5px auto 5px !important;
+  color: #0b586c !important;
+}
+
+.cabeceraPanel {
+  background-color: #0b586c !important;
+  /*border-bottom: 1px solid #DDDDDD;*/
+}
+
+.cabeceraPanel:hover {
+  background-color: rgb(1, 143, 199) !important;
+  /*border-bottom: 1px solid #DDDDDD;*/
+}
+
+.lblTituloPanel {
+  color: rgb(255, 255, 255);
+  font-weight: 500;
+}
+
+.lblForm {
+  color: #0b586c;
+  font-weight: 500;
+  margin-top: 15px;
+}
+
+
+.lblInfo {
+  color: #0b586c;
+  margin-top: 15px;
+  text-align: justify;
+}
+
+.mat-label {
+  color: #0b586c;
+  font-weight: 500 !important;
+}
+
+.mat-checkbox {
+  margin-right: 5% !important;
+  color: #0b586c;
+  font-weight: 500 !important;
+}
+
+.mat-icon,
+.material-icons {
+  color: #0b586c;
+}
+
+input {
+  text-transform: uppercase;
+}
+
+.inputEmail {
+  text-transform: initial !important;
+}
+
+fieldset {
+  padding: 2%;
+  margin: 10px auto 10px auto;
+  border-color: #0b586c !important;
+}
+
+.form-button {
+  text-align: center;
+  margin: 1%;
+}
+
+legend {
+  color: #0b586c;
+  font-weight: 500 !important;
+}
+
+.invisible {
+  display: none;
+  visibility: hidden;
+  height: 0;
+  width: 0;
+}
+
+.acordeon {
+  margin: 10px 0px 10px 1px !important;
+}
+
+.form-error {
+  transition: color 0.4s ease-in, text-shadow 0.4s ease-in, background-color 0.5s linear 0s;
+  text-shadow: #bbb 2px 2px 2px;
+  background-color: #ffffcc;
+  color: #BF1722;
+}
+
+.mat-header-cell {
+  background-color: rgb(243, 243, 243) !important;
+}
+
+.mat-raised-button {
+  margin: 5px !important;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline {
+  color: #C6BCB9;
+}
+
+.mat-tab-body-wrapper {
+  background-color: #F2F2F2;
+  padding: 0.5em 2% 2% 2%;
+}
+
+/*
+    GESTIC-270343
+    Estilos para mejora: "Contraste en letra roja y fondo blanco no es suficiente"
+*/
+.mat-form-field-subscript-wrapper {
+  font-size: 85%;
+  position: relative;
+}
+
+.mat-error {
+  color: #db1a1a;
+  font-weight: bold;
+}
+
+// fin GESTIC-270343
+
+/* Estilos de formularios de auto liquidación*/
+
+/* Columnas*/
+.mat-column-titulo {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 80% !important;
+  width: 80% !important;
+  overflow-wrap: break-word;
+
+  word-break: break-word;
+
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+.mat-column-cod {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 5% !important;
+  width: 5% !important;
+  overflow-wrap: break-word;
+
+  word-break: break-word;
+
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+.mat-column-valor {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 15% !important;
+  width: 15% !important;
+  overflow-wrap: break-word;
+
+  word-break: break-word;
+
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+/*
+    Ajusta los input para que no excedan el tamaño de la celda
+*/
+.mat-form-field {
+  width: 100%;
+  display: block !important;
+}
+
+.highlight {
+  background: #eeccff;
+}
+
+.padding-left-50 {
+  padding-left: 50px !important;
+}
+
+.ali-derecha {
+  text-align: right !important;
+}
+
+.enumerado {
+  font-size: small;
+  margin-right: 5px;
+  vertical-align: super;
+  color: rgb(2, 93, 129);
+}
+
+// Estilos de las pestañas de bienes inmuebles
+.icon-reducido {
+  height: 20px !important;
+  width: 20px !important;
+  font-size: 20px !important;
+}
+
+.sin-line-height {
+  line-height: 0% !important;
+}
+
+.customizarColumnaBienes {
+  flex: 0 0 70%;
+}
+
+.customizarColumnaBienes2 {
+  flex: 0 0 15%;
+}
+
+.customizarColumnaReducionesBienes {
+  flex: 0 0 85%;
+}
+
+// Fin Estilos de las pestañas de bienes inmuebles
+
+// Estilos de la pestaña Repartición Herencia
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0;
+}
+
+.radio-button {
+  margin: 5px;
+}
+
+// Fin Estilos de la pestaña Repartición Herencia
+
+// Estilos de la pestaña Autoliquidación
+
+// Elimina el padding en el bottom para los input de tablas de autoliquidación
+#mat-auto {
+  margin-bottom: -1.25em !important;
+}
+
+// Fin Estilos de la pestaña Autoliquidación
+
+.mat-option {
+  white-space: normal !important;
+  height: auto !important;
+  border-top: 1px solid #e2dede;
+}
+
+.campoValor {
+  max-width: 150px;
+  flex: 1;
+}
+
+/* GESTIC-310105 */
+//cobrowse frame
+.webchat-frame {
+  width: 400px !important;
+  height: 100px !important;
+  padding-top: 5px !important;
+  margin: 0px !important;
+  border: 0px !important;
+  background-color: #FFF !important;
+}

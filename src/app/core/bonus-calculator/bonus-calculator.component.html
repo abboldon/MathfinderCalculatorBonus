@@ -1,0 +1,201 @@
+<mat-expansion-panel>
+  <mat-expansion-panel-header>
+    <mat-panel-title> Datos del perso </mat-panel-title>
+  </mat-expansion-panel-header>
+  <mat-form-field style="width: 300px; margin: 50px auto; display: block;">
+    <input type="text" [(ngModel)]="personajeSeleccionado" placeholder="Turno" matInput [formControl]="formControl"
+           [matAutocomplete]="auto2" (ngModelChange)="cargarPersonaje()">
+    <mat-autocomplete autoActiveFirstOption #auto2="matAutocomplete">
+      <mat-option *ngFor="let item1 of autoFilter | async" [value]="item1">
+        {{item1}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+  <mat-form-field>
+    <input
+      matInput
+      id="nombre"
+      name="nombre"
+      [(ngModel)]="personaje.nombre"
+      type="text"
+    />
+    <mat-label>NOMBRE</mat-label>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input
+      matInput
+      id="atq1"
+      name="atq1"
+      [(ngModel)]="personaje.atq1"
+      type="number"
+    />
+    <mat-label>ATQ1</mat-label>
+  </mat-form-field>
+  <mat-form-field>
+    <input
+      matInput
+      id="atq2"
+      name="atq2"
+      [(ngModel)]="personaje.atq2"
+      type="number"
+    />
+    <mat-label>ATQ2</mat-label>
+  </mat-form-field>
+  <mat-form-field>
+    <input
+      matInput
+      id="atq3"
+      name="atq3"
+      [(ngModel)]="personaje.atq3"
+      type="number"
+    />
+    <mat-label>ATQ3</mat-label>
+  </mat-form-field>
+  <mat-form-field>
+    <input
+      matInput
+      id="atq4"
+      name="atq4"
+      [(ngModel)]="personaje.atq4"
+      type="number"
+    />
+    <mat-label>ATQ4</mat-label>
+  </mat-form-field>
+  <br />
+
+  <mat-form-field>
+    <input
+      matInput
+      id="dano"
+      name="dano"
+      [(ngModel)]="personaje.dano"
+      type="number"
+    />
+    <mat-label>DAÑO</mat-label> </mat-form-field
+  >+
+  <mat-form-field>
+    <input
+      matInput
+      id="danoAdicional"
+      name="dano"
+      [(ngModel)]="danoAdicional"
+      type="text"
+    />
+    <mat-label>Adicional</mat-label>
+  </mat-form-field>
+  <br />
+
+  <mat-form-field>
+    <input
+      matInput
+      id="ca"
+      name="ca"
+      [(ngModel)]="personaje.ca"
+      type="number"
+    />
+    <mat-label>CA</mat-label>
+  </mat-form-field>
+  <mat-form-field>
+    <input
+      matInput
+      id="fue"
+      name="fue"
+      [(ngModel)]="personaje.fue"
+      type="number"
+    />
+    <mat-label>FUE</mat-label>
+  </mat-form-field>
+  <mat-form-field>
+    <input
+      matInput
+      id="des"
+      name="des"
+      [(ngModel)]="personaje.des"
+      type="number"
+    />
+    <mat-label>DES</mat-label>
+  </mat-form-field>
+  <mat-form-field>
+    <input
+      matInput
+      id="pg"
+      name="pg"
+      [(ngModel)]="personaje.pg"
+      type="number"
+    />
+    <mat-label>PGOLPE</mat-label>
+  </mat-form-field>
+  <br />
+  <mat-form-field>
+    <input
+      matInput
+      id="tsfort"
+      name="tsfort"
+      [(ngModel)]="personaje.tsfor"
+      type="number"
+    />
+    <mat-label>TS FORT</mat-label>
+  </mat-form-field>
+  <mat-form-field>
+    <input
+      matInput
+      id="tsref"
+      name="tsref"
+      [(ngModel)]="personaje.tsref"
+      type="number"
+    />
+    <mat-label>TS REF</mat-label>
+  </mat-form-field>
+  <mat-form-field>
+    <input
+      matInput
+      id="tsvol"
+      name="tsvol"
+      [(ngModel)]="personaje.tsvol"
+      type="number"
+    />
+    <mat-label>TS VOL</mat-label>
+  </mat-form-field>
+</mat-expansion-panel>
+
+<mat-expansion-panel>
+  <mat-expansion-panel-header>
+    <mat-panel-title> Bonus Disponibles </mat-panel-title>
+  </mat-expansion-panel-header>
+  <mat-slide-toggle
+    *ngFor="let bonus of bonusExistentes"
+    (click)="activarBono(bonus)"
+    >{{ bonus.nombre }}</mat-slide-toggle
+  >
+</mat-expansion-panel>
+
+<div fxLayout="row wrap" fxLayoutGap="16px">
+    <mat-card class="mat-elevation-z4">
+      <mat-card-content>
+        <h1>
+          Ataques: {{ personaje.atq1 }}/{{ personaje.atq2 }}/{{
+            personaje.atq3
+          }}/{{ personaje.atq4 }}
+        </h1>
+
+          <h1>Daño:{{ personaje.dano }}+{{ danoAdicional }}</h1>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="mat-elevation-z4">
+      <mat-card-content>
+        <h2>TS Fortaleza:{{ personaje.tsfor}}</h2>
+        <h2>TS Reflejos:{{ personaje.tsref}}</h2>
+          <h2>TS Voluntad:{{ personaje.tsvol}}</h2>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="mat-elevation-z4">
+      <mat-card-content>
+        <h1>
+          CA:{{ personaje.ca }}
+        </h1>
+      </mat-card-content>
+    </mat-card>
+</div>

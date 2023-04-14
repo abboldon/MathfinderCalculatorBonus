@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col">
+    <mat-form-field style="width: 300px; margin: 50px auto; display: block;">
+      <input type="text" [(ngModel)]="info" placeholder="Turno" matInput [formControl]="formControl"
+             [matAutocomplete]="auto2">
+      <mat-autocomplete autoActiveFirstOption #auto2="matAutocomplete">
+        <mat-option *ngFor="let item1 of autoFilter | async" [value]="item1">
+          {{item1}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  </div>
+  <div class="col">
+    <mat-button-toggle  style="margin-top: 10%" (click)="onSubmit()" > Enviar peticion</mat-button-toggle>
+  </div>
+</div>
+<div clas="row">
+  <div *ngIf="mostrarInfo; then   mostrarinteraciones"></div>
+  <ng-template #mostrarinteraciones>
+    <p>El valor del select es <strong>{{info}}</strong></p>
+  </ng-template>
+
+</div>
