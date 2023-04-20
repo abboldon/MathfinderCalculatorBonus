@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col">
     <mat-form-field style="width: 300px; margin: 50px auto; display: block;">
-      <input type="text" [(ngModel)]="info" placeholder="Turno" matInput [formControl]="formControl"
+      <input type="text" [(ngModel)]="info" placeholder="Elige perso si no quieres teclear" matInput [formControl]="formControl"
              [matAutocomplete]="auto2">
       <mat-autocomplete autoActiveFirstOption #auto2="matAutocomplete">
         <mat-option *ngFor="let item1 of autoFilter | async" [value]="item1">

@@ -15,211 +15,147 @@ export class CalculadorService {
     return bonusRegistrados;
   }
 
-  public aplicaBono(bono: Bonus, personaje: Personaje) {
-    console.log(
-      'bono1 ' +
-        bono.tipo1 +
-        '-' +
-        ' bono2' +
-        bono.tipo2 +
-        ' activo ' +
-        bono.activo
-    );
-    console.log(
-      'mod1 ' + bono.mod1 + '-' + ' mod2' + bono.mod2 + ' activo ' + bono.activo
-    );
-    if (bono.activo) {
-      if (bono.mod1 != null && bono.mod1 > 0) {
-        switch (bono.tipo1) {
-          case 'FUE': {
-            console.log('entra1');
-            personaje.atq1 += bono.mod1 / 2;
-            console.log('resultado' + personaje.atq1);
-            personaje.dano += bono.mod1 / 2;
-            break;
-          }
-          case 'DES': {
-            personaje.atq1 += bono.mod1 / 2;
-            personaje.tsref += bono.mod1 / 2;
-            break;
-          }
-          case 'CON': {
-            personaje.atq1 += bono.mod1 / 2;
-            personaje.tsfor += bono.mod1 / 2;
-            break;
-          }
-          case 'INT': {
-            personaje.atq1 += bono.mod1 / 2;
-            break;
-          }
-          case 'SAB': {
-            personaje.atq1 += bono.mod1 / 2;
-            personaje.tsvol += bono.mod1 / 2;
-            break;
-          }
-          case 'CAR': {
-            break;
-          }
-          case 'ATQ': {
-            personaje.atq1 += bono.mod1;
-            break;
-          }
-          case 'DAN': {
-            personaje.dano += bono.mod1;
-            break;
-          }
-          case 'SAL': {
-            personaje.tsfor += bono.mod1;
-            personaje.tsref += bono.mod1;
-            personaje.tsvol += bono.mod1;
-            break;
-          }
-        }
-      }
+  public aplicarBonos(personaje: Personaje, bono: Bonus) {
+    let sumarRestar: number = 1;
+
+    if (!bono.activo) {
+      sumarRestar = -1;
+    }
+    //lo llamamos dos veces, uno para cada modificador
+    if (bono.tipo1 != 'ESP') {
+      this.aplicarBono(bono.tipo1, bono.mod1, sumarRestar, personaje);
+      this.aplicarBono(bono.tipo2, bono.mod2, sumarRestar, personaje);
     } else {
-      if (bono.mod1 != null && bono.mod1 > 0) {
-        switch (bono.tipo1) {
-          case 'FUE': {
-            console.log('entra2');
-            personaje.atq1 -= bono.mod1 / 2;
-            personaje.dano -= bono.mod1 / 2;
-            break;
-          }
-          case 'DES': {
-            personaje.atq1 -= bono.mod1 / 2;
-            personaje.tsref -= bono.mod1 / 2;
-            break;
-          }
-          case 'CON': {
-            personaje.atq1 -= bono.mod1 / 2;
-            personaje.tsfor -= bono.mod1 / 2;
-            break;
-          }
-          case 'INT': {
-            personaje.atq1 -= bono.mod1 / 2;
-            break;
-          }
-          case 'SAB': {
-            personaje.atq1 -= bono.mod1 / 2;
-            personaje.tsvol -= bono.mod1 / 2;
-            break;
-          }
-          case 'CAR': {
-            break;
-          }
-          case 'ATQ': {
-            personaje.atq1 -= bono.mod1;
-            break;
-          }
-          case 'DAN': {
-            personaje.dano -= bono.mod1;
-            break;
-          }
-          case 'SAL': {
-            personaje.tsfor -= bono.mod1;
-            personaje.tsref -= bono.mod1;
-            personaje.tsvol -= bono.mod1;
-            break;
-          }
-        }
+      //cada uno de los bonos especiales tendrá su función de cálculo
+      if (bono.nombre == 'Acelerar') {
+        this.aplicaAcelerar(personaje, sumarRestar);
+      }
+      if (bono.nombre == 'Ataque Poderoso') {
+        this.aplicaAtaquePoderoso(personaje, sumarRestar);
       }
     }
+  }
 
-    //para el segundo
-    if (bono.activo) {
-      if (bono.mod2 != null && bono.mod2 > 0) {
-        switch (bono.tipo2) {
-          case 'FUE': {
-            console.log('entra3');
-            personaje.atq2 += bono.mod2 / 2;
-            personaje.dano += bono.mod2 / 2;
-            break;
+  public aplicarBono(
+    tipo: string,
+    mod: number,
+    sumarRestar: number,
+    personaje: Personaje
+  ) {
+    if (mod != null && mod > 0) {
+      switch (tipo) {
+        case 'FUE': {
+          if (personaje.tipAtq != 'DI') {
+            personaje.atq1 += (mod / 2) * sumarRestar;
+            personaje.dano += (mod / 2) * sumarRestar;
           }
-          case 'DES': {
-            personaje.atq2 += bono.mod2 / 2;
-            personaje.tsref += bono.mod2 / 2;
-            break;
-          }
-          case 'CON': {
-            personaje.atq2 += bono.mod2 / 2;
-            personaje.tsfor += bono.mod2 / 2;
-            break;
-          }
-          case 'INT': {
-            personaje.atq2 += bono.mod2 / 2;
-            break;
-          }
-          case 'SAB': {
-            personaje.atq2 += bono.mod2 / 2;
-            personaje.tsvol += bono.mod2 / 2;
-            break;
-          }
-          case 'CAR': {
-            break;
-          }
-          case 'ATQ': {
-            personaje.atq2 += bono.mod2;
-            break;
-          }
-          case 'DAN': {
-            personaje.dano += bono.mod2;
-            break;
-          }
-          case 'SAL': {
-            personaje.tsfor += bono.mod2;
-            personaje.tsref += bono.mod2;
-            personaje.tsvol += bono.mod2;
-            break;
-          }
+          break;
         }
-      }
-    } else {
-      if (bono.mod2 != null && bono.mod2 > 0) {
-        switch (bono.tipo2) {
-          case 'FUE': {
-            console.log('entra4');
-            personaje.atq2 -= bono.mod2 / 2;
-            personaje.dano -= bono.mod2 / 2;
-            break;
+        case 'DES': {
+          if (personaje.tipAtq == 'DI') {
+            personaje.atq1 += (mod / 2) * sumarRestar;
           }
-          case 'DES': {
-            personaje.atq2 -= bono.mod2 / 2;
-            personaje.tsref -= bono.mod2 / 2;
-            break;
-          }
-          case 'CON': {
-            personaje.atq2 -= bono.mod2 / 2;
-            personaje.tsfor -= bono.mod2 / 2;
-            break;
-          }
-          case 'INT': {
-            personaje.atq2 -= bono.mod2 / 2;
-            break;
-          }
-          case 'SAB': {
-            personaje.atq2 -= bono.mod2 / 2;
-            personaje.tsvol -= bono.mod2 / 2;
-            break;
-          }
-          case 'CAR': {
-            break;
-          }
-          case 'ATQ': {
-            personaje.atq2 -= bono.mod2;
-            break;
-          }
-          case 'DAN': {
-            personaje.dano -= bono.mod2;
-            break;
-          }
-          case 'SAL': {
-            personaje.tsfor -= bono.mod2;
-            personaje.tsref -= bono.mod2;
-            personaje.tsvol -= bono.mod2;
-            break;
-          }
+          personaje.ca += (mod / 2) * sumarRestar;
+          personaje.tsref += (mod / 2) * sumarRestar;
+          break;
+        }
+        case 'CON': {
+          personaje.pg += (mod / 2) * sumarRestar;
+          personaje.tsfor += (mod / 2) * sumarRestar;
+          break;
+        }
+        case 'INT': {
+          personaje.int += (mod / 2) * sumarRestar;
+          break;
+        }
+        case 'SAB': {
+          personaje.sab += (mod / 2) * sumarRestar;
+          personaje.tsvol += (mod / 2) * sumarRestar;
+          break;
+        }
+        case 'CAR': {
+          personaje.car += (mod / 2) * sumarRestar;
+          break;
+        }
+        case 'ATQ': {
+          personaje.atq1 += mod * sumarRestar;
+          break;
+        }
+        case 'DAN': {
+          personaje.dano += mod * sumarRestar;
+          break;
+        }
+        case 'CA': {
+          personaje.ca += mod * sumarRestar;
+          break;
+        }
+        case 'SAL': {
+          personaje.tsfor += mod * sumarRestar;
+          personaje.tsref += mod * sumarRestar;
+          personaje.tsvol += mod * sumarRestar;
+          break;
+        }
+        case 'TSREF': {
+          personaje.tsref += mod * sumarRestar;
+          break;
+        }
+        case 'TSFORT': {
+          personaje.tsfor += mod * sumarRestar;
+          break;
+        }
+        case 'TSVOL': {
+          personaje.tsvol += mod * sumarRestar;
+          break;
         }
       }
     }
   }
+
+  public aplicaAcelerar(personaje: Personaje, sumarRestar: number) {
+    //acelerar es ataque + 1, CA + 1 y TSREF +1 y un ataque adicional que no se tiene en cuenta
+    personaje.atq1 += 1 * sumarRestar;
+    personaje.ca += 1 * sumarRestar;
+    personaje.tsref += 1 * sumarRestar;
+  }
+
+  public apilcaFuria(personaje: Personaje, sumarRestar: number) {
+
+  }
+
+  public aplicaAtaquePoderoso(personaje: Personaje, sumarRestar: number) {
+    let bonoXatq: number = 0;
+    let bonoXdan: number = 0;
+
+    if (personaje.atqBase != null) {
+      bonoXatq = Math.trunc(personaje.atqBase / 4) + 1;
+      bonoXdan = bonoXatq * 2;
+    }
+
+    //armas cuerpo a cuerpo a dos manos un 50% más en el daño
+    if (personaje.tipAtq == 'CC2'){
+      bonoXdan = Math.round(bonoXdan * 1.5);
+    }
+
+    //finalmente volcamos el bono
+    personaje.atq1 -= (bonoXatq * sumarRestar);
+    personaje.dano += (bonoXdan * sumarRestar);
+  }
+
+  public aplicaArmaMagicaMayor(personaje: Personaje, sumarRestar: number) {
+    let bonoXatqDan: number = 0;
+
+    //+1 ataque y daño por cada cuatro niveles máximo 5
+    if (personaje.nivel != null) {
+      bonoXatqDan = Math.trunc(personaje.nivel / 4) + 1;
+    }
+    if (bonoXatqDan > 5) {
+      bonoXatqDan = 5;
+    }
+
+    //finalmente volcamos el bono
+    personaje.atq1 += (bonoXatqDan * sumarRestar);
+    personaje.dano += (bonoXatqDan * sumarRestar);
+  }
+
+  public aplicaArcanus(ataqDano: number, danoD6: string) {}
 }

@@ -20,6 +20,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import {MatCardModule} from '@angular/material/card';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatRadioModule } from '@angular/material/radio';
 
 
 @NgModule({
@@ -39,7 +40,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatInputModule,
     MatFormFieldModule,
     MatAutocompleteModule,
-    FormsModule, MatButtonToggleModule, MatExpansionModule, MatSlideToggleModule, MatCardModule, MatGridListModule, FlexLayoutModule
+    FormsModule, MatButtonToggleModule, MatExpansionModule, MatSlideToggleModule, MatCardModule, MatGridListModule, FlexLayoutModule, MatRadioModule
   ],
   exports: [
     CoreComponent

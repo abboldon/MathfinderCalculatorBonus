@@ -25,6 +25,7 @@ import { HeaderComponent } from './core/core/header/header.component';
 import { CoreComponent } from './core/core/core.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatRadioModule } from '@angular/material/radio';
 
 @NgModule({
   declarations: [AppComponent],
@@ -49,6 +50,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
+    MatRadioModule
   ],
   providers: [],
   bootstrap: [AppComponent],

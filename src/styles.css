@@ -27,19 +27,25 @@ mat-grid-tile {
 
 mat-grid-list {
   margin: 1%;
-  padding:1%;
+  padding: 1%;
   height: fit-content;
 }
 
 mat-card {
-  margin: 0.5%;
+  margin: 0.2%;
   display: inline-block;
   color: #553a6e;
 }
-mat-card-contend {
-  height: 80%;
+
+mat-card-header {
+  background-color: #a8e3f0;
+  color: black;
+  font-weight: bold;
 }
 
+mat-slide-toggle {
+  margin: 5px;
+}
 /* You can add global styles to this file, and also import other style files */
 
 html,
@@ -99,16 +105,17 @@ body {
 }
 
 .campoPequeno {
+  width: fit-content;
   max-width: 100px;
-  flex: 1;
+  margin: 3px;
 }
 
 .campoMediano {
-  max-width: 200px;
+  max-width: 150px;
 }
 
 .campoGrande {
-  max-width: 300px;
+  max-width: 200px;
 }
 
 .btnControl {

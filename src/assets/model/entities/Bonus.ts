@@ -21,4 +21,6 @@ export class Bonus {
   mod2: number = 0;
 
   activo : boolean = false;
+
+  tipoBono : string = "";
 }

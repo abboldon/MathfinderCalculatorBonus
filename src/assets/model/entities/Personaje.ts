@@ -6,7 +6,9 @@ export class Personaje {
   idperso: number = 0;
 
   //@Column("text", { name: "NOMBRE", nullable: true })
-  nombre: string = "";
+  nombre: string = '';
+
+  atqBase: number = 0;
 
   //@Column("integer", { name: "ATQ1", nullable: true, default: () => "0" })
   atq1: number = 0;
@@ -29,6 +31,12 @@ export class Personaje {
   //@Column("integer", { name: "DES", nullable: true, default: () => "10" })
   des: number = 0;
 
+  car: number = 0;
+
+  sab: number = 0;
+
+  int: number = 0;
+
   //@Column("integer", { name: "CA", nullable: true, default: () => "10" })
   ca: number = 0;
 
@@ -44,9 +52,9 @@ export class Personaje {
   //@Column("integer", { name: "TSVOL", nullable: true })
   tsvol: number = 0;
 
-  pg : number = 0;
+  pg: number = 0;
 
-  dano : number = 0;
+  dano: number = 0;
 
-  tipAtq : string = "CC";
+  tipAtq: string = 'CC';
 }

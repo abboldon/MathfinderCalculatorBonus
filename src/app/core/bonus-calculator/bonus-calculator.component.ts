@@ -18,16 +18,18 @@ export class BonusCalculatorComponent implements OnInit {
   public personajesExistentes: Personaje[] = [];
   public personaje: Personaje = new Personaje();
   public danoAdicional: string = '1D6?';
-  public personajeSeleccionado : string ="";
+  public personajeSeleccionado: string = '';
 
-  departamentotext: string[] = ["CRAMER","DURZAK","FRIDA","ZOLTAN"]
-  Items:  string[] = [];
+  departamentotext: string[] = ['CRAMER', 'DURZAK', 'FRIDA', 'ZOLTAN'];
+  Items: string[] = [];
   autoFilter: Observable<string[]>;
   formControl = new FormControl();
 
   private mat_filter(value: string): string[] {
     const filterValue = value.toLowerCase();
-    return this.Items.filter(option => option.toLowerCase().indexOf(filterValue) === 0);
+    return this.Items.filter(
+      (option) => option.toLowerCase().indexOf(filterValue) === 0
+    );
   }
 
   constructor(
@@ -42,25 +44,33 @@ export class BonusCalculatorComponent implements OnInit {
     this.cargaComboPersonajes();
     this.autoFilter = this.formControl.valueChanges.pipe(
       startWith(''),
-      map(value => this.mat_filter(value))
+      map((value) => this.mat_filter(value))
     );
-
   }
 
-  public cargaComboPersonajes(){
-    this.Items = [""];
-    for (let i = 0; i < this.personajesExistentes.length; i ++){
+  public cargaComboPersonajes() {
+    this.Items = [''];
+    for (let i = 0; i < this.personajesExistentes.length; i++) {
       this.Items.push(this.personajesExistentes[i].nombre);
     }
   }
 
-  public cargarPersonaje(){
-    console.log('recuperamos' + this.personajesExistentes.filter(personaje => personaje.nombre = this.personajeSeleccionado)[0]);
-    if (this.personajesExistentes.filter(personaje => personaje.nombre = this.personajeSeleccionado)[0] != null) {
-      this.personaje = this.personajesExistentes.filter(personaje => personaje.nombre = this.personajeSeleccionado)[0];
+  public cargarPersonaje() {
+    console.log(
+      'recuperamos' +
+        this.personajesExistentes.filter(
+          (personaje) => (personaje.nombre = this.personajeSeleccionado)
+        )[0]
+    );
+    if (
+      this.personajesExistentes.filter(
+        (personaje) => (personaje.nombre = this.personajeSeleccionado)
+      )[0] != null
+    ) {
+      this.personaje = this.personajesExistentes.filter(
+        (personaje) => (personaje.nombre = this.personajeSeleccionado)
+      )[0];
     }
-
-
   }
 
   ngOnInit() {}
@@ -71,8 +81,38 @@ export class BonusCalculatorComponent implements OnInit {
     } else {
       bono.activo = true;
     }
-    console.log(this.personaje.atq1);
-    this.calculadorService.aplicaBono(bono, this.personaje);
-    console.log(this.personaje.atq1);
+
+    this.calculadorService.aplicarBonos(this.personaje, bono);
+  }
+
+  recalcularBonos() {
+    //vamos a recalcular todos los bonos, para ello copiamos el array, lo aplicamos al personaje con todos los bonos a false y luego volvemos a aplicar el establecido en el modelo
+    let bonusTemp: Bonus[] = [];
+
+    this.bonusExistentes.forEach((val) =>
+      bonusTemp.push(Object.assign({}, val))
+    );
+
+    for (let i = 0; i < bonusTemp.length; i++) {
+      if (bonusTemp[i].activo) {
+        bonusTemp[i].activo = false;
+        console.log(
+          'recalculando bonos: primero a false' + bonusTemp[i].nombre + '-' + bonusTemp[i].activo
+        );
+        this.calculadorService.aplicarBonos(this.personaje, bonusTemp[i]);
+      }
+    }
+    //volvemos ahora a aplicar los bonos actuales
+    for (let i = 0; i < this.bonusExistentes.length; i++) {
+      if (this.bonusExistentes[i].activo) {
+        console.log(
+          'recalculando bonos: después a true' + this.bonusExistentes[i].nombre + '-' + this.bonusExistentes[i].activo
+        );
+        this.calculadorService.aplicarBonos(
+          this.personaje,
+          this.bonusExistentes[i]
+        );
+      }
+    }
   }
 }

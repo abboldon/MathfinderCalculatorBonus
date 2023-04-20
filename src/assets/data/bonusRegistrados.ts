@@ -9,6 +9,7 @@ export const bonusRegistrados: Bonus[] = [
     mod1: 4,
     mod2: 0,
     activo: false,
+    tipoBono: ''
   },
   {
     idBonus: 2,
@@ -18,6 +19,7 @@ export const bonusRegistrados: Bonus[] = [
     mod1: 4,
     mod2: 0,
     activo: false,
+    tipoBono: ''
   },
   {
     idBonus: 4,
@@ -27,6 +29,7 @@ export const bonusRegistrados: Bonus[] = [
     mod1: 2,
     mod2: 2,
     activo: false,
+    tipoBono: ''
   },
   {
     idBonus: 5,
@@ -36,32 +39,66 @@ export const bonusRegistrados: Bonus[] = [
     mod1: 4,
     mod2: 4,
     activo: false,
+    tipoBono: ''
   },
   {
     idBonus: 10,
     nombre: 'Acelerar',
     tipo1: 'ESP',
-    tipo2: 'SAL',
+    tipo2: '',
     mod1: 0,
-    mod2: 1,
+    mod2: 0,
     activo: false,
+    tipoBono: ''
   },
   {
     idBonus: 15,
-    nombre: "Ataque Poderoso",
-    tipo1: "ATQ",
-    tipo2: "DAN",
-    mod1: -1,
-    mod2: 2,
-    activo: false
+    nombre: 'Ataque Poderoso',
+    tipo1: 'ESP',
+    tipo2: '',
+    mod1: 0,
+    mod2: 0,
+    activo: false,
+    tipoBono: ''
   },
   {
     idBonus: 20,
-    nombre: "Arcanus(1)",
-    tipo1: "ATQ",
-    tipo2: "ESP",
+    nombre: 'Arcanus(+1+3D6)',
+    tipo1: 'ESP',
+    tipo2: '',
+    mod1: 0,
+    mod2: 0,
+    activo: false,
+    tipoBono: ''
+  },
+  {
+    idBonus: 25,
+    nombre: 'Furia',
+    tipo1: 'ESP',
+    tipo2: '',
+    mod1: 0,
+    mod2: 0,
+    activo: false,
+    tipoBono: ''
+  },
+  {
+    idBonus: 20,
+    nombre: 'Arma Mágica',
+    tipo1: 'ATQ',
+    tipo2: 'DAN',
     mod1: 1,
-    mod2: 3,
-    activo: false
+    mod2: 1,
+    activo: false,
+    tipoBono: ''
+  },
+  {
+    idBonus: 20,
+    nombre: 'Arma Mágica Mayor',
+    tipo1: 'ESP',
+    tipo2: '',
+    mod1: 0,
+    mod2: 0,
+    activo: false,
+    tipoBono: ''
   }
 ];
