@@ -6,6 +6,10 @@
     "start": "ng serve -aot -o",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
+    "pub": "npm run build:pub && npm run push",
+    "build:prod": "ng build --configuration production",
+    "build:pub": "ng build --configuration production --output-path docs --base-href https://abboldon.github.io/MathfinderCalculatorBonus/",
+    "push": "git add * && git commit -m 'pub' && git push",
     "test": "ng test"
   },
   "private": true,
