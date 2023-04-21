@@ -22,6 +22,7 @@ export const personajesRegistrados: Personaje[] = [
     tsvol: 18,
     pg: 18,
     dano: 18,
+    danoAdicional: '1D6?',
     tipAtq: 'CC',
   },
   {
@@ -45,6 +46,7 @@ export const personajesRegistrados: Personaje[] = [
     tsvol: 18,
     pg: 18,
     dano: 18,
+    danoAdicional: '1D6?',
     tipAtq: 'CC',
   },
   {
@@ -68,6 +70,7 @@ export const personajesRegistrados: Personaje[] = [
     tsvol: 18,
     pg: 18,
     dano: 18,
+    danoAdicional: '1D6?',
     tipAtq: 'CC',
   },
   {
@@ -91,6 +94,7 @@ export const personajesRegistrados: Personaje[] = [
     tsvol: 18,
     pg: 18,
     dano: 18,
+    danoAdicional: '1D6?',
     tipAtq: 'CC',
   },
 ];

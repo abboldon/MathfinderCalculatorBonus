@@ -56,5 +56,7 @@ export class Personaje {
 
   dano: number = 0;
 
+  danoAdicional: string = '1D6?';
+
   tipAtq: string = 'CC';
 }
