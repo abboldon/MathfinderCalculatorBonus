@@ -9,7 +9,7 @@ export const bonusRegistrados: Bonus[] = [
     mod1: 4,
     mod2: 0,
     activo: false,
-    tipoBono: ''
+    tipoBono: 'GENERAL',
   },
   {
     idBonus: 2,
@@ -19,7 +19,7 @@ export const bonusRegistrados: Bonus[] = [
     mod1: 4,
     mod2: 0,
     activo: false,
-    tipoBono: ''
+    tipoBono: 'GENERAL',
   },
   {
     idBonus: 4,
@@ -29,7 +29,7 @@ export const bonusRegistrados: Bonus[] = [
     mod1: 2,
     mod2: 2,
     activo: false,
-    tipoBono: ''
+    tipoBono: 'MORAL',
   },
   {
     idBonus: 5,
@@ -39,7 +39,7 @@ export const bonusRegistrados: Bonus[] = [
     mod1: 4,
     mod2: 4,
     activo: false,
-    tipoBono: ''
+    tipoBono: 'MORAL',
   },
   {
     idBonus: 10,
@@ -49,7 +49,7 @@ export const bonusRegistrados: Bonus[] = [
     mod1: 0,
     mod2: 0,
     activo: false,
-    tipoBono: ''
+    tipoBono: 'ESQUIVA',
   },
   {
     idBonus: 15,
@@ -59,7 +59,7 @@ export const bonusRegistrados: Bonus[] = [
     mod1: 0,
     mod2: 0,
     activo: false,
-    tipoBono: ''
+    tipoBono: 'GENERAL',
   },
   {
     idBonus: 20,
@@ -69,7 +69,7 @@ export const bonusRegistrados: Bonus[] = [
     mod1: 0,
     mod2: 0,
     activo: false,
-    tipoBono: ''
+    tipoBono: 'GENERAL',
   },
   {
     idBonus: 25,
@@ -79,7 +79,7 @@ export const bonusRegistrados: Bonus[] = [
     mod1: 0,
     mod2: 0,
     activo: false,
-    tipoBono: ''
+    tipoBono: 'MORAL',
   },
   {
     idBonus: 20,
@@ -89,7 +89,7 @@ export const bonusRegistrados: Bonus[] = [
     mod1: 1,
     mod2: 1,
     activo: false,
-    tipoBono: ''
+    tipoBono: 'GENERAL',
   },
   {
     idBonus: 20,
@@ -99,6 +99,66 @@ export const bonusRegistrados: Bonus[] = [
     mod1: 0,
     mod2: 0,
     activo: false,
-    tipoBono: ''
-  }
+    tipoBono: 'GENERAL',
+  },
+  {
+    idBonus: 25,
+    nombre: 'Armadrua de Mago',
+    tipo1: 'CA',
+    tipo2: '',
+    mod1: 4,
+    mod2: 0,
+    activo: false,
+    tipoBono: 'ARMADURA',
+  },
+  {
+    idBonus: 30,
+    nombre: 'Escudo',
+    tipo1: 'CA',
+    tipo2: '',
+    mod1: 4,
+    mod2: 0,
+    activo: false,
+    tipoBono: 'ESCUDO',
+  },
+  {
+    idBonus: 35,
+    nombre: 'Escudo de la Fe',
+    tipo1: 'ESP',
+    tipo2: '',
+    mod1: 0,
+    mod2: 0,
+    activo: false,
+    tipoBono: 'DESVIO',
+  },
+  {
+    idBonus: 40,
+    nombre: 'Piel Robliza',
+    tipo1: 'ESP',
+    tipo2: '',
+    mod1: 0,
+    mod2: 0,
+    activo: false,
+    tipoBono: 'NATURAL',
+  },
+  {
+    idBonus: 50,
+    nombre: 'Bendecir',
+    tipo1: 'ATQ',
+    tipo2: '',
+    mod1: 1,
+    mod2: 0,
+    activo: false,
+    tipoBono: 'MORAL',
+  },
+  {
+    idBonus: 55,
+    nombre: 'Favor Divino',
+    tipo1: 'ESP',
+    tipo2: '',
+    mod1: 0,
+    mod2: 0,
+    activo: false,
+    tipoBono: 'SUERTE',
+  },
 ];
