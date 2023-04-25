@@ -161,4 +161,14 @@ export const bonusRegistrados: Bonus[] = [
     activo: false,
     tipoBono: 'SUERTE',
   },
+  {
+    idBonus: 60,
+    nombre: 'Azote',
+    tipo1: 'ESP',
+    tipo2: '',
+    mod1: 0,
+    mod2: 0,
+    activo: false,
+    tipoBono: 'GENERAL',
+  }
 ];
