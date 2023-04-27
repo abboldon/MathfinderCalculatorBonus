@@ -171,4 +171,37 @@ export const bonusRegistrados: Bonus[] = [
     activo: false,
     tipoBono: 'GENERAL',
   }
+  ,
+  {
+    idBonus: 65,
+    nombre: 'Poder Divino',
+    tipo1: 'ESP',
+    tipo2: '',
+    mod1: 0,
+    mod2: 0,
+    activo: false,
+    tipoBono: 'SUERTE',
+  }
+  ,
+  {
+    idBonus: 70,
+    nombre: 'Auxilio Divino',
+    tipo1: 'ESP',
+    tipo2: '',
+    mod1: 0,
+    mod2: 0,
+    activo: false,
+    tipoBono: 'MORAL',
+  }
+  ,
+  {
+    idBonus: 75,
+    nombre: 'Poder de la Justicia',
+    tipo1: 'ESP',
+    tipo2: '',
+    mod1: 0,
+    mod2: 0,
+    activo: false,
+    tipoBono: 'GENERAL',
+  }
 ];

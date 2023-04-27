@@ -14,16 +14,16 @@ export class Personaje {
   atq1: number = 0;
 
   //@Column("integer", { name: "ATQ2", nullable: true, default: () => "0" })
-  atq2: number = 0;
+  atq2: number | null = 0;
 
   //@Column("integer", { name: "ATQ3", nullable: true, default: () => "0" })
-  atq3: number = 0;
+  atq3: number | null = 0;
 
   //@Column("integer", { name: "ATQ4", nullable: true, default: () => "0" })
-  atq4: number = 0;
+  atq4: number | null = 0;
 
   //@Column("integer", { name: "ATQ5", nullable: true, default: () => "0" })
-  atq5: number = 0;
+  atq5: number | null = 0;
 
   //@Column("integer", { name: "FUE", nullable: true, default: () => "10" })
   fue: number = 0;
