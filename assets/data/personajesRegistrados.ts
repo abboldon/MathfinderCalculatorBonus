@@ -39,7 +39,7 @@ export const personajesRegistrados: Personaje[] = [
     car: 8,
     sab: 10,
     int: 25,
-    ca: 18,
+    ca: 26,
     nivel: 15,
     tsref: 12,
     tsfor: 17,
