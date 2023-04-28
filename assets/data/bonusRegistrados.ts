@@ -203,5 +203,15 @@ export const bonusRegistrados: Bonus[] = [
     mod2: 0,
     activo: false,
     tipoBono: 'GENERAL',
+  },
+  {
+    idBonus: 80,
+    nombre: 'Vestidura Mágica',
+    tipo1: 'ESP',
+    tipo2: '',
+    mod1: 0,
+    mod2: 0,
+    activo: false,
+    tipoBono: 'GENERAL',
   }
 ];
