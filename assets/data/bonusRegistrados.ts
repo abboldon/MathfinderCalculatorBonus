@@ -170,8 +170,7 @@ export const bonusRegistrados: Bonus[] = [
     mod2: 0,
     activo: false,
     tipoBono: 'GENERAL',
-  }
-  ,
+  },
   {
     idBonus: 65,
     nombre: 'Poder Divino',
@@ -181,8 +180,7 @@ export const bonusRegistrados: Bonus[] = [
     mod2: 0,
     activo: false,
     tipoBono: 'SUERTE',
-  }
-  ,
+  },
   {
     idBonus: 70,
     nombre: 'Auxilio Divino',
@@ -192,8 +190,7 @@ export const bonusRegistrados: Bonus[] = [
     mod2: 0,
     activo: false,
     tipoBono: 'MORAL',
-  }
-  ,
+  },
   {
     idBonus: 75,
     nombre: 'Poder de la Justicia',
@@ -213,5 +210,5 @@ export const bonusRegistrados: Bonus[] = [
     mod2: 0,
     activo: false,
     tipoBono: 'GENERAL',
-  }
+  },
 ];
