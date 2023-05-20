@@ -21,7 +21,7 @@ export const personajesRegistrados: Personaje[] = [
     tsfor: 23,
     tsvol: 14,
     pg: 240,
-    dano: 28,
+    dano: 30,
     danoAdicional: '3D6',
     tipAtq: 'CC2',
   },
