@@ -56,7 +56,7 @@ export const personajesRegistrados: Personaje[] = [
     atq1: 24,
     atq2: 19,
     atq3: 14,
-    atq4: null,
+    atq4: 9,
     atq5: null,
     fue: 24,
     des: 12,
